@@ -12,6 +12,10 @@ export default defineConfig({
         devtool: false,
       },
     },
+    setupNodeEvents(on, config) {
+      codeCoverageTask(on, config)
+      return config
+    },
     specPattern: "src/**/*.cy.{js,jsx,ts,tsx}",
   },
 
