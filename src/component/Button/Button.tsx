@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { HtmlHTMLAttributes } from 'react'
 
-const Button = () => {
+interface ButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
+  title: string,
+}
+const Button = (props: ButtonProps) => {
+  const {title, ...rest} = props
   return (
-    <button>Button</button>
+    <button {...rest}>{title}</button>
   )
 }
 
